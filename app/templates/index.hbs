@@ -1,0 +1,12 @@
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>Welcome to Super Rentals!</h2>
+  <p>We hope you find exactly what you're looking for in a place to stay.</p>
+  {{!-- use LinkTo instead of 'a' tag --}}
+  {{!-- 'a' tag would require a full page refresh and fetch from server --}}
+  {{!-- LinkTo is a component (hence capitalisation) --}}
+  {{!-- route is an argument, hence the @ --}}
+  {{!-- component also takes regular html attribues (e.g. class) without the @ --}}
+  {{!-- under the hood, LinkTo is actually 'a' tag, but handled by ember to render url's content without full refresh --}}
+  <LinkTo @route="about" class="button">About Us</LinkTo>
+</div>
