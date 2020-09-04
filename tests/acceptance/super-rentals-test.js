@@ -12,6 +12,8 @@ module("Acceptance | super rentals", function (hooks) {
     await visit("/");
     // currentURL is a test helper as imported above
     assert.equal(currentURL(), "/");
+    assert.dom("nav").exists();
+    assert.dom("h1").hasText("SuperRentals");
     assert.dom("h2").hasText("Welcome to Super Rentals!");
     // look inside the tag with jumbo class for an 'a' tag with button class
     assert.dom(".jumbo a.button").hasText("About Us");
@@ -21,6 +23,8 @@ module("Acceptance | super rentals", function (hooks) {
 
   test("visiting /about", async function (assert) {
     await visit("/about");
+    assert.dom("nav").exists();
+    assert.dom("h1").hasText("SuperRentals");
     assert.equal(currentURL(), "/about");
     assert.dom("h2").hasText("About Super Rentals");
     assert.dom(".jumbo a.button").hasText("Contact Us");
@@ -30,10 +34,25 @@ module("Acceptance | super rentals", function (hooks) {
 
   test("visiting /getting-in-touch", async function (assert) {
     await visit("/getting-in-touch");
+    assert.dom("nav").exists();
+    assert.dom("h1").hasText("SuperRentals");
     assert.equal(currentURL(), "/getting-in-touch");
     assert.dom("h2").hasText("Contact Us");
     assert.dom(".jumbo a.button").hasText("About");
     await click(".jumbo a.button");
     assert.equal(currentURL(), "/about");
+  });
+
+  test("navigating using the nav bar", async function (assert) {
+    await visit("/");
+
+    await click("nav a.menu-about");
+    assert.equal(currentURL(), "/about");
+
+    await click("nav a.menu-contact");
+    assert.equal(currentURL(), "/getting-in-touch");
+
+    await click("nav a.menu-index");
+    assert.equal(currentURL(), "/");
   });
 });

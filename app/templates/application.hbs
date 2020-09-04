@@ -1,0 +1,10 @@
+{{!-- application.hbs is automatically loaded and shared across every page --}}
+{{!-- for site-wide elements like nav bar, footer, etc --}}
+
+<div class="container">
+  <NavBar />
+  <div class="body">
+    {{!-- our sites pages will be rendered at 'outlet', similar to 'yield' in components --}}
+    {{outlet}}
+  </div>
+</div>
