@@ -8,4 +8,13 @@
   {{!-- component also takes regular html attribues (e.g. class) without the @ --}}
   {{!-- under the hood, LinkTo is actually 'a' tag, but handled by ember to render url's content without full refresh --}}
   <LinkTo @route="about" class="button">About Us</LinkTo>
+
+  <div class="rentals">
+    <ul class="results">
+      <li><Rental /></li>
+      <li><Rental /></li>
+      <li><Rental /></li>
+    </ul>
+  </div>
+
 </Jumbo>
