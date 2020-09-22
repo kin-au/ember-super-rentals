@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 // import access token from the env file
-import ENV from "super-rentals/config/environment";
+import ENV from "ember-super-rentals/config/environment";
 
 export default class MapComponent extends Component {
   // token getter allows us to access our token as this.token
