@@ -15,5 +15,6 @@ module("Integration | Component | rental", function (hooks) {
     assert.dom("article .detail.location").includesText("Paris");
     assert.dom("article .detail.bedrooms").includesText("16");
     assert.dom("article .image").exists();
+    assert.dom("article .map").exists();
   });
 });

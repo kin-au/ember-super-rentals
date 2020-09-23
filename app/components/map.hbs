@@ -2,8 +2,8 @@
   <img alt="Map image at coordinates {{@lat}},{{@lng}}"
   {{!-- can use ...attr to pass in class, override default alt tag etc. --}}
   {{!-- this is order-sensitive, so src/width/height are assigned afterwards, ensuring it cannot be accidentally overwritten by invoker --}}
-    ...attributes 
-    src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/{{@lng}},{{@lat}},{{@zoom}},0/{{@width}}x{{@height}}@2x?access_token={{this.token}}"
+    ...attributes
+    src={{this.src}}
     width={{@width}}
     height={{@height}}
   >
