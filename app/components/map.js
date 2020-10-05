@@ -11,7 +11,7 @@ export default class MapComponent extends Component {
   // so no need to monitor them for changes using @tracked
   get src() {
     // access the component's arguments using the this.args, an API provided by glimmer/component superclass
-    // can return the value of src from within the template by using this.src
+    // can return the value of src by using this.src from within the template
     let { lng, lat, width, height, zoom } = this.args;
     let coordinates = `${lng},${lat},${zoom}`;
     let dimensions = `${width}x${height}`;
