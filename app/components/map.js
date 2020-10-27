@@ -2,8 +2,7 @@ import Component from "@glimmer/component";
 // import access token from the env file
 import ENV from "ember-super-rentals/config/environment";
 
-const MAPBOX_API =
-  "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/";
+const MAPBOX_API = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static";
 export default class MapComponent extends Component {
   // getters cannot be assigned new values directly, they produce/return values
   // ember automatically tracks variables that are used to compute getter's value
@@ -16,7 +15,7 @@ export default class MapComponent extends Component {
     let coordinates = `${lng},${lat},${zoom}`;
     let dimensions = `${width}x${height}`;
     let accessToken = `access_token=${this.token}`;
-    return `${MAPBOX_API}${coordinates}${dimensions}@2x?${accessToken}`;
+    return `${MAPBOX_API}/${coordinates}/${dimensions}@2x?${accessToken}`;
   }
 
   // token getter allows us to access our token as this.token
