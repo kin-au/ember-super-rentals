@@ -8,13 +8,15 @@
   {{!-- component also takes regular html attribues (e.g. class) without the @ --}}
   {{!-- under the hood, LinkTo is actually 'a' tag, but handled by ember to render url's content without full refresh --}}
   <LinkTo @route="about" class="button">About Us</LinkTo>
+</Jumbo>
 
   <div class="rentals">
     <ul class="results">
-      <li><Rental /></li>
-      <li><Rental /></li>
-      <li><Rental /></li>
+      {{!-- pass in the model to the Rental components as @rental --}}
+      {{!-- in each iteration of the loop, we have access to the current iteration of the model --}}
+      {{!-- here we've named it |rental|, so we access it using `rental` inside the block --}}
+      {{#each @model as |rental|}}
+        <li><Rental @rental={{rental}} /></li>
+      {{/each}}
     </ul>
   </div>
-
-</Jumbo>
